@@ -1,0 +1,20 @@
+ 7.
+ select * from departments;
+
+ 8.       
+ select employee_id, last_name, job_id, hire_date startdate
+from employees;
+
+ 9.       
+ select distinct job_id
+from employees;
+
+ 10.  
+select employee_id “EmP#”, last_name “Employee”, job_id “Job”, hire_date “Hire Date”
+from employees;
+
+11.  
+select last_name||', '||job_id "Employee and Title" from employees;
+
+12. 
+select employee_id||','||first_name||','|| last_name||','||email||','||phone_number||','||hire_date||','||job_id||','||salary||','||commission_pct the_output from employees;

@@ -1,0 +1,48 @@
+1
+CREATE OR REPLACE VIEW employees_1
+AS SELECT employee_id, last_name employee, department_id 
+FROM employees; 
+
+2
+SELECT * FROM employees_1;
+
+3
+SELECT employee, department_id  
+FROM employees_1; 
+
+4
+CREATE VIEW oehr_dept50 
+AS SELECT employee_id empno, last_name employee, department_id deptno    
+FROM employees    
+WHERE department_id = 50   
+WITH CHECK OPTION CONSTRAINT emp_dept_50; 
+
+5
+DESC oehr_dept50 
+ 
+6
+SELECT * FROM oehr_dept50; 
+
+7
+UPDATE oehr_dept50 
+SET deptno = 80 
+WHERE employee = 'Matos'; 
+
+8
+CREATE SEQUENCE dept_id_seq 
+START WITH 200 INCREMENT BY 10 MAXVALUE 1000;
+
+9
+INSERT INTO oehr_dept VALUES (dept_id_seq.nextval, 'Education'); 
+ 
+10
+INSERT INTO oehr_dept VALUES (dept_id_seq.nextval, 'Administration'); 
+
+11
+CREATE INDEX dept_name_idx ON oehr_dept (name); 
+
+12
+CREATE SYNONYM emp FOR EMPLOYEES;
+
+
+SELECT * FROM EMPLOYEES;

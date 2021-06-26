@@ -1,0 +1,41 @@
+Part 1
+1.
+SELECT SYSDATE "Date" FROM DUAL
+
+2.
+SELECT employee_id, last_name, salary, ROUND (salary * 1.155, 0) "New Salary" FROM   OEHR_EMPLOYEES;
+
+3.
+select employee_id, last_name, salary, salary+(salary*15.5/100) "New Salary"
+from OEHR_EMPLOYEES;
+
+4.	
+select employee_id, last_name, salary, salary+(salary*15.5/100) "New Salary", (salary+(salary*15.5/100))-salary "Increses"
+from OEHR_EMPLOYEES;
+
+5.	
+select initcap(last_name) "Name", length(last_name) "Length of Name"
+from OEHR_EMPLOYEES
+where last_name like 'J%' or last_name like 'A%' or last_name like 'M%'
+order by last_name;
+//bas arippen
+
+//eto nado na sql dev
+SELECT last_name FROM OEHR_EMPLOYEES WHERE last_name like '&Start_Letter%';
+
+6.	
+SELECT   last_name, ROUND(MONTHS_BETWEEN(SYSDATE, hire_date)) " MONTHS_WORKED."
+FROM     OEHR_EMPLOYEES
+ORDER BY 2;
+
+7.	
+SELECT last_name, LPAD(salary, 15, '$') SALARY FROM OEHR_EMPLOYEES;
+
+
+8.
+SELECT rpad(last_name, 8)||' '|| rpad(' ', salary/1000+1, '*') EMPLOYEES_AND_THEIR_SALARIES FROM OEHR_EMPLOYEES ORDER BY salary DESC;
+
+9.
+SELECT last_name, trunc((SYSDATE-hire_date)/7) AS TENURE FROM OEHR_EMPLOYEES WHERE department_id = 90 ORDER BY TENURE DESC 
+
+	

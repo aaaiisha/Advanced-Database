@@ -1,0 +1,25 @@
+1.
+Select department_id,department_name,location_id FROM OEHR_DEPARTMENTS natural JOIN oehr_locations;
+
+2.
+Select department_id,department_name,location_id FROM OEHR_DEPARTMENTS natural JOIN oehr_locations where department_id IN(20,50);
+
+3.
+Select employee_id, last_name,location_id,department_id from OEHR_EMPLOYEES join OEHR_DEPARTMENTS USING(department_id);
+
+4.
+Select e.employee_id,e.last_name,e.department_id,d.department_id,d.location_id from OEHR_EMPLOYEES e JOIN OEHR_DEPARTMENTS d ON (e.department_id=d.department_id);
+
+5.
+Select employee_id,city,department_name from OEHR_EMPLOYEES e JOIN OEHR_DEPARTMENTS d ON e.department_id=d.department_id JOIN OEHR_LOCATIONS l ON d.location_id=l.location_id;
+
+6.
+Select e.last_name, e.salary,j.grade_level from OEHR_EMPLOYEES e JOIN job_grades j ON e.salary BETWEEN j.lowest_sal AND j.highest_sal;
+
+7.
+Select e.last_name,e.department_id,d.department_name from OEHR_EMPLOYEES e LEFT OUTER JOIN OEHR_DEPARTMENTS d ON(e.department_id=d.department_id);
+
+8.
+Select e.last_name,e.department_id,d.department_name from OEHR_EMPLOYEES e RIGHT OUTER JOIN OEHR_DEPARTMENTS d ON(e.department_id=d.department_id);
+
+9.Select e.last_name,e.department_id,d.department_name from OEHR_EMPLOYEES e FULL OUTER JOIN OEHR_DEPARTMENTS d ON(e.department_id=d.department_id);

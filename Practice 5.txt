@@ -1,0 +1,29 @@
+1. True
+2. False. The reason is that group functions ingore null vibes. If we want to include
+null values, we need usd the NVL function.
+3. True
+4. SELECT ROUND (MAX(salary),0) "Maximum",
+	  ROUND (MIN(salary),0) "Minimum",
+          ROUND (SUM(salary),0) "Sum",
+          ROUND (AVG(salary),0) "Average",
+from OEHR_EMPLOYEES;
+5. SELECT ROUND (MAX(salary),0) "Maximum",
+	  ROUND (MIN(salary),0) "Minimum",
+          ROUND (SUM(salary),0) "Sum",
+          ROUND (AVG(salary),0) "Average",
+from OEHR_EMPLOYEES
+GROUP BY job_id;
+
+6. SELECT job_id, COUNT(*)
+   FROM OEHR_EMPLOYEES
+   GROUP BY job_id;
+7. SELECT COUNT(DISTINCT magaer_id) "Namber of Managers"
+   FROM OEHR_EMPLOYEES;
+8. SELECT MAX(salary) - MIN(salary) DIFFERENCE
+   FROM OEHR_EMPLOYEES;
+9. SELECT manager_id, MIN(salary)
+   FROM employees
+   WHERE manager_id IS NOT NULL
+   GROUP BY manager-id
+   HAVING MIN(salary) > 6000
+   ORDER BY MIN(salary) DESC;
